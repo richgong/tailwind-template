@@ -1,9 +1,9 @@
 import React from 'react';
 
-const App = () => {
+const App: React.FC = () => {
     return (
         <div>
-            <h1>Welcome to Webp App</h1>
+            <h1>Welcome to Webp App with TypeScript</h1>
         </div>
     );
 };
