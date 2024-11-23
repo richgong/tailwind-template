@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from './components/ui/button'; // Adjust the path based on your Shadcn setup
+import { Button } from '@/components/ui/button'; // Adjust the path based on your Shadcn setup
 
 const App: React.FC = () => {
   return (
