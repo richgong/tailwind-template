@@ -1,2 +1,2 @@
 cd frontend
-npx shadcn@latest add $1
+npx shadcn@latest add $*
