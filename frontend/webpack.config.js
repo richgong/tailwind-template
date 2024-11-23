@@ -1,22 +1,29 @@
 const path = require('path');
 
 module.exports = {
-    entry: './src/index.tsx', // Your main React entry file
+    entry: './src/index.tsx',
     output: {
-        path: path.resolve(__dirname, '../static/js'), // Output to Flask's static folder
-        filename: 'main.js', // Generated file name
+        path: path.resolve(__dirname, '../static/js'),
+        filename: 'main.js',
     },
     resolve: {
-        extensions: ['.tsx', '.ts', '.js'], // Add `.tsx` and `.ts` extensions
+        extensions: ['.tsx', '.ts', '.js'],
+        alias: {
+            '@': path.resolve(__dirname, './'),
+        }
     },
     module: {
         rules: [
             {
-                test: /\.tsx?$/, // Match `.ts` and `.tsx` files
+                test: /\.tsx?$/,
                 exclude: /node_modules/,
                 use: 'ts-loader',
             },
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader', 'postcss-loader'],
+            },
         ],
     },
-    mode: 'production', // Use production mode for optimized builds
+    mode: 'production',
 };
